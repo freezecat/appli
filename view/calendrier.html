@@ -1,0 +1,98 @@
+
+<div ng-controller="calendrier">
+
+   
+        <h1 >{{ mois_nom }}</h1>
+<table border="1px solid black">
+    <tr>
+        <th style="width:160px;height:50px;text-align:center;" ng-repeat = "c in days_of_week">{{ c }}</th>
+    </tr>
+   <!--  exemple : vendredi 23 => d=5 et t = 23 (7+d-t%7)%7 =(12-2)%7 = 3 , le mois a commencer pour d =4 soit un jeudi-->
+        <!-- ik est le nombres de jours de décalages pour chaque 1er du mois autre que le mois en cours-->
+   <!-- pour le mois en cours ik=0 -->
+  
+       
+        <tr>
+
+                <td ng-repeat="n in [] | range:40 | limitTo:7:0" >
+                           
+                           
+                        <span class="days"  ng-if="-7+n+ik > (7+d-t%7)%7"> 
+                        {{-7+n+ik-(7+d-t%7)%7}}
+                        </span>
+                    </td>
+                </tr>
+
+        <tr>
+
+        <td ng-repeat="n in [] | range:40 | limitTo:7:0" >
+                   
+                   
+                <span class="days"  ng-if="n+ik > (7+d-t%7)%7"> 
+                {{n+ik-(7+d-t%7)%7}}
+                </span>
+            </td>
+        </tr>
+        <tr>
+                <td ng-repeat="n in [] | range:40 | limitTo:7:7" >
+                           
+                           
+                        <span class="days"> 
+                        {{n+ik-(7+d-t%7)%7}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                        <td ng-repeat="n in [] | range:40 | limitTo:7:14" >
+                                   
+                                   
+                                <span class="days"> 
+                                {{n+ik-(7+d-t%7)%7}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                             <td ng-repeat="n in [] | range:40 | limitTo:7:21" >
+                                           
+                                           
+                                 <span class="days"> 
+                                 {{n+ik-(7+d-t%7)%7}}
+                                  </span>
+                             </td>
+                        </tr>
+                        <tr>
+                                <td ng-repeat="n in [] | range:40 | limitTo:7:28" >
+                                              
+                                              
+                                    <span class="days" ng-if="n+ik-(7+d-t%7)%7<  mois_jours + 1"> 
+                                    {{n+ik-(7+d-t%7)%7}}
+                                     </span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td ng-repeat="n in [] | range:40 | limitTo:7:35" >
+                                              
+                                              
+                                    <span class="days" ng-if="n+ik-(7+d-t%7)%7<  mois_jours + 1"> 
+                                    {{n+ik-(7+d-t%7)%7}}
+                                     </span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td ng-repeat="n in [] | range:40 | limitTo:7:42" ng-click="bn7(n+ik-1-(7+d-t%7)%7)">
+                                              
+                                              
+                                    <span class="days" ng-if="n+ik-(7+d-t%7)%7<  mois_jours + 1"> 
+                                    {{n+ik-(7+d-t%7)%7}}
+                                     </span>
+                                </td>
+                           </tr>
+                      
+                     
+</table>
+
+<button class="btn btn-primary" ng-click="precedent()">Précédent</button> 
+ <button class="btn btn-primary"  ng-click="suivant()">Suivant</button>
+
+
+</div>

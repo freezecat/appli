@@ -1,0 +1,12 @@
+<div ng-controller="appli">
+      
+    <div class="row"> 
+    <div class="col-sm" ng-repeat="ap in appli">
+     <a href="/angularjs/pp/#!/{{ ap.redirect }}"><img src="{{ ap.image }}" width=50 height=50 alt="no" title="{{ ap.author }}"/></a>
+        {{ ap.redirect }}
+     </div>
+    
+     </div>
+  
+    </div>
+    <hr> 

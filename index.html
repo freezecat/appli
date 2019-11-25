@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../css/games.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-cookies.js"></script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+<!-- si pas de changement malgré le chargement de la page fermer puis ouvrir le navigateur.-->
+<!-- pour que ng-view fonctionne ne pas oublier #! dans l'url-->
+<style>
+.active
+{
+   background: lightcoral;
+}
+</style>
+</head>
+<body>
+    <div ng-include="'view/header.html'"></div>
+    
+      <div ng-view></div>
+    <div ng-include="'view/footer.html'"></div>
+    <script src="app.js"></script>
+    
